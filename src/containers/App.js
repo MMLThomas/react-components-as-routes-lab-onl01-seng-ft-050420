@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Route
@@ -10,12 +11,21 @@ import Directors from '../components/Directors';
 import Movies from '../components/Movies';
 
 
+
 const App = (props) => {
   return (
-    <Router>
-      {/*{code here}*/}
-    </Router>
-  );
+
+      <Router>
+        
+          <NavBar />
+          <Route exact path='/' component={Home}/>
+          <Route path='/actors' component={Actors}/>
+          <Route path='/directors' component={Directors}/>
+          <Route path='/movies' component={Movies}/>
+        
+      </Router>
+  )
+  
 };
 
 export default App
